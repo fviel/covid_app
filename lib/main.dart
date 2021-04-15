@@ -35,9 +35,9 @@ class HomeScreen extends StatelessWidget {
         body: Column(
       children: <Widget>[
         ClipPath(
-          clipper:MyClipper(),
+          clipper: MyClipper(),
           child: Container(
-            padding: EdgeInsets.only(left:40, top:50, right:20),
+            padding: EdgeInsets.only(left: 40, top: 50, right: 20),
             height: 350,
             width: double.infinity,
             decoration: BoxDecoration(
@@ -50,8 +50,13 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                SvgPicture.asset("assets/icons/menu.svg"),
+                Align(
+                    alignment: Alignment.topRight,
+                    child: SvgPicture.asset("assets/icons/menu.svg")
+                ),
+                SizedBox(height: 20),
               ],
             ),
           ),
@@ -62,15 +67,13 @@ class HomeScreen extends StatelessWidget {
 }
 
 //faz o acabamento arredondado do container
-class MyClipper extends CustomClipper<Path>{
+class MyClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
     var path = Path();
-    path.lineTo(0, size.height-80);
-    path.quadraticBezierTo(size.width /2,
-        size.height,
-        size.width,
-        size.height - 80);
+    path.lineTo(0, size.height - 80);
+    path.quadraticBezierTo(
+        size.width / 2, size.height, size.width, size.height - 80);
     path.lineTo(size.width, 0);
     path.close();
     return path;
