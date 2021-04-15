@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:covid_app/constant.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 void main() {
   runApp(MyApp());
@@ -36,6 +37,7 @@ class HomeScreen extends StatelessWidget {
         ClipPath(
           clipper:MyClipper(),
           child: Container(
+            padding: EdgeInsets.only(left:40, top:50, right:20),
             height: 350,
             width: double.infinity,
             decoration: BoxDecoration(
@@ -46,6 +48,11 @@ class HomeScreen extends StatelessWidget {
               image: DecorationImage(
                 image: AssetImage("assets/images/virus.png"),
               ),
+            ),
+            child: Column(
+              children: <Widget>[
+                SvgPicture.asset("assets/icons/menu.svg"),
+              ],
             ),
           ),
         ),
