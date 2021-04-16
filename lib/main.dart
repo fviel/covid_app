@@ -69,7 +69,7 @@ class HomeScreen extends StatelessWidget {
                     Positioned(
                       top: 20,
                       left: 150,
-                      child: Text("All you need is to stay at home.",
+                      child: Text("Se puder, \nfique em casa.",
                           style: kHeadingTextStyle.copyWith(
                             color: Colors.white,
                           ),
@@ -79,6 +79,18 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ))
               ],
+            ),
+          ),
+        ),
+        Container(
+          height:60,
+          width:double.infinity,
+          margin:EdgeInsets.symmetric(horizontal: 20),
+          decoration: BoxDecoration(
+            color:Colors.white,
+            borderRadius: BorderRadius.circular(25),
+            border:Border.all(
+              color:Color(0xFFE5E5E5),
             ),
           ),
         ),
