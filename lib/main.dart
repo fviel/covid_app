@@ -53,10 +53,31 @@ class HomeScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Align(
-                    alignment: Alignment.topRight,
-                    child: SvgPicture.asset("assets/icons/menu.svg")
+                  alignment: Alignment.topRight,
+                  child: SvgPicture.asset("assets/icons/menu.svg"),
                 ),
                 SizedBox(height: 20),
+                Expanded(
+                    child: Stack(
+                  children: <Widget>[
+                    SvgPicture.asset(
+                      "assets/icons/Drcorona.svg",
+                      width: 230,
+                      fit: BoxFit.fitWidth,
+                      alignment: Alignment.topCenter,
+                    ),
+                    Positioned(
+                      top: 20,
+                      left: 150,
+                      child: Text("All you need is to stay at home.",
+                          style: kHeadingTextStyle.copyWith(
+                            color: Colors.white,
+                          ),
+                      ),
+                    ),
+                    Container(),
+                  ],
+                ))
               ],
             ),
           ),
