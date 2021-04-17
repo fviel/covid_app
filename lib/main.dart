@@ -117,6 +117,33 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
         ),
+        Padding(
+          padding:EdgeInsets.symmetric(horizontal:20),
+          child: Column(
+            children:<Widget>[
+              Row(
+                children:<Widget>[
+                  RichText(
+                    text: TextSpan(
+                        children: [
+                          TextSpan(
+                            text: "Case Update",
+                            style: kTitleTextStyle,
+                          ),
+                          TextSpan(
+                            text: "Newest update March 28",
+                            style: TextStyle(
+                              color: kTextLightColor,
+                            ),
+                          ),
+                        ],
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
       ],
     ));
   }
