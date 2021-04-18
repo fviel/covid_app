@@ -132,7 +132,6 @@ class HomeScreen extends StatelessWidget {
                           text: "Case Update  ",
                           style: kTitleTextStyle,
                         ),
-
                         TextSpan(
                           text: "Newest update March 28",
                           style: TextStyle(
@@ -142,6 +141,7 @@ class HomeScreen extends StatelessWidget {
                       ],
                     ),
                   ),
+
                   ///o spacer preenche o espaço e joga o text lá pro final da row
                   Spacer(),
                   Text(
@@ -173,50 +173,57 @@ class HomeScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Counter(
-                      color:kInfectedColor,
-                      number: 1046,
-                      title:'Infected'
-                    ),
+                        color: kInfectedColor, number: 1046, title: 'Infected'),
+                    Counter(color: kDeathColor, number: 87, title: 'Deaths'),
                     Counter(
-                        color:kDeathColor,
-                        number: 87,
-                        title:'Deaths'
-                    ),
-                    Counter(
-                        color:kRecoverColor,
-                        number: 46,
-                        title:'Recovered'
-                    ),
+                        color: kRecoverColor, number: 46, title: 'Recovered'),
                   ],
                 ),
               ),
+              SizedBox(height: 20),
               Row(
-                //separa os texts, mas podia ter usado um Spacer
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children:<Widget>[
-                  // Text(
-                  //   'Spread of Virus',
-                  //   style: kTitleTextStyle,
-                  // ),
+                  //separa os texts, mas podia ter usado um Spacer
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    // Text(
+                    //   'Spread of Virus',
+                    //   style: kTitleTextStyle,
+                    // ),
 
-    RichText(
-    text: TextSpan(
-    children: [
-    TextSpan(
-    text: "Spread of Virus  ",
-    style: kTitleTextStyle,
-    ),
-    ],
-    ),
-    ),
-                  Text(
-                    'See details',
-                    style: TextStyle(
-                      color: kPrimaryColor,
-                      fontWeight: FontWeight.w600,
+                    RichText(
+                      text: TextSpan(
+                        children: [
+                          TextSpan(
+                            text: "Spread of Virus  ",
+                            style: kTitleTextStyle,
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                ]
+                    Text(
+                      'See details',
+                      style: TextStyle(
+                        color: kPrimaryColor,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ]
+              ),
+              Container(
+                height: 178,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Colors.white,
+                  boxShadow: [
+                    BoxShadow(
+                      offset: Offset(0,10),
+                      blurRadius: 30,
+                      color: kShadowColor,
+                    ),
+                  ],
+                ),
+                child: Image.asset("assets/images/map.png"),
               ),
             ],
           ),
@@ -230,12 +237,13 @@ class Counter extends StatelessWidget {
   final int number; //número de infectados
   final Color color;
   final String title;
+
   const Counter({
     Key key,
     this.number,
     this.color,
     this.title,
-  }) : super(key : key);
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -277,7 +285,6 @@ class Counter extends StatelessWidget {
     );
   }
 }
-
 
 //faz o acabamento arredondado do container
 class MyClipper extends CustomClipper<Path> {
