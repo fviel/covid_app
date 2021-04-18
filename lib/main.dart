@@ -69,10 +69,11 @@ class HomeScreen extends StatelessWidget {
                     Positioned(
                       top: 20,
                       left: 150,
-                      child: Text("Se puder, \nfique em casa.",
-                          style: kHeadingTextStyle.copyWith(
-                            color: Colors.white,
-                          ),
+                      child: Text(
+                        "Se puder, \nfique em casa.",
+                        style: kHeadingTextStyle.copyWith(
+                          color: Colors.white,
+                        ),
                       ),
                     ),
                     Container(),
@@ -83,68 +84,71 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
         Container(
-          height:60,
-          width:double.infinity,
-          margin:EdgeInsets.symmetric(horizontal: 20),
-          padding:EdgeInsets.symmetric(vertical:10, horizontal:20),
+          height: 60,
+          width: double.infinity,
+          margin: EdgeInsets.symmetric(horizontal: 20),
+          padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
           decoration: BoxDecoration(
-            color:Colors.white,
+            color: Colors.white,
             borderRadius: BorderRadius.circular(25),
-            border:Border.all(
-              color:Color(0xFFE5E5E5),
+            border: Border.all(
+              color: Color(0xFFE5E5E5),
             ),
           ),
           child: Row(
-            children:<Widget>[
+            children: <Widget>[
               SvgPicture.asset("assets/icons/maps-and-flags.svg"),
-              SizedBox(width:20),
+              SizedBox(width: 20),
               Expanded(
-                child:DropdownButton(
+                child: DropdownButton(
                   isExpanded: true,
                   underline: SizedBox(),
                   icon: SvgPicture.asset("assets/icons/dropdown.svg"),
-                  value:'Brasil',
-                  items:['Brasil','Argentina', 'Chile','Uruguay'].map<DropdownMenuItem<String>>((String value){
+                  value: 'Brasil',
+                  items: ['Brasil', 'Argentina', 'Chile', 'Uruguay']
+                      .map<DropdownMenuItem<String>>((String value) {
                     return DropdownMenuItem<String>(
                       value: value,
-                      child:Text(value),
+                      child: Text(value),
                     );
                   }).toList(),
-                  onChanged:(value){},
+                  onChanged: (value) {},
                 ),
               ),
             ],
           ),
         ),
-        SizedBox(height:20),
+        SizedBox(height: 20),
         Padding(
-          padding:EdgeInsets.symmetric(horizontal:20),
+          padding: EdgeInsets.symmetric(horizontal: 20),
           child: Column(
-            children:<Widget>[
+            children: <Widget>[
               Row(
-                children:<Widget>[
+                children: <Widget>[
                   RichText(
                     text: TextSpan(
-                        children: [
-                          TextSpan(
-                            text: "Case Update",
-                            style: kTitleTextStyle,
+                      children: [
+                        TextSpan(
+                          text: "Case Update",
+                          style: kTitleTextStyle,
+                        ),
+                        TextSpan(
+                          text: "Newest update March 28",
+                          style: TextStyle(
+                            color: kTextLightColor,
                           ),
-                          TextSpan(
-                            text: "Newest update March 28",
-                            style: TextStyle(
-                              color: kTextLightColor,
-                            ),
-                          ),
-                        ],
+                        ),
+                      ],
                     ),
                   ),
                   Spacer(),
-                  Text('See details',
-                  style: TextStyle(
-                    color: kPrimaryColor,
-                    fontWeight: FontWeight.w600,
-                  ),)
+                  Text(
+                    'See details',
+                    style: TextStyle(
+                      color: kPrimaryColor,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  )
                 ],
               ),
               SizedBox(height: 20),
@@ -153,38 +157,20 @@ class HomeScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   color: Colors.white,
-                  boxShadow:[
+                  boxShadow: [
                     BoxShadow(
-                      offset:Offset(0,4),
+                      offset: Offset(0, 4),
                       blurRadius: 30,
                       color: kShadowColor,
                     ),
                   ],
                 ),
                 child: Row(
-                  children:<Widget> [
-                    Column(
-                      children: <Widget> [
-                        Container(
-                          padding: EdgeInsets.all(6),
-                          height:25,
-                          width:25,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: kInfectedColor.withOpacity(.26),
-                          ),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: Colors.transparent,
-                              border: Border.all(
-                                color: kInfectedColor,
-                                width:2,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
+                  children: <Widget>[
+                    Counter(
+                      color:kInfectedColor,
+                      number: 1046,
+                      title:'Incted'
                     ),
                   ],
                 ),
@@ -196,6 +182,58 @@ class HomeScreen extends StatelessWidget {
     ));
   }
 }
+
+class Counter extends StatelessWidget {
+  final int number; //número de infectados
+  final Color color;
+  final String title;
+  const Counter({
+    Key key,
+    this.number,
+    this.color,
+    this.title,
+  }) : super(key : key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        Container(
+          padding: EdgeInsets.all(6),
+          height: 25,
+          width: 25,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            color: color.withOpacity(.26),
+          ),
+          child: Container(
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: Colors.transparent,
+              border: Border.all(
+                color: color,
+                width: 2,
+              ),
+            ),
+          ),
+        ),
+        SizedBox(height: 10),
+        Text(
+          '$number',
+          style: TextStyle(
+            fontSize: 40,
+            color: color,
+          ),
+        ),
+        Text(
+          title,
+          style: kSubTextStyle,
+        ),
+      ],
+    );
+  }
+}
+
 
 //faz o acabamento arredondado do container
 class MyClipper extends CustomClipper<Path> {
