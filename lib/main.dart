@@ -129,9 +129,10 @@ class HomeScreen extends StatelessWidget {
                     text: TextSpan(
                       children: [
                         TextSpan(
-                          text: "Case Update",
+                          text: "Case Update  ",
                           style: kTitleTextStyle,
                         ),
+
                         TextSpan(
                           text: "Newest update March 28",
                           style: TextStyle(
@@ -193,10 +194,21 @@ class HomeScreen extends StatelessWidget {
                 //separa os texts, mas podia ter usado um Spacer
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children:<Widget>[
-                  Text(
-                    'Spread of Virus',
-                    style: kTitleTextStyle,
-                  ),
+                  // Text(
+                  //   'Spread of Virus',
+                  //   style: kTitleTextStyle,
+                  // ),
+
+    RichText(
+    text: TextSpan(
+    children: [
+    TextSpan(
+    text: "Spread of Virus  ",
+    style: kTitleTextStyle,
+    ),
+    ],
+    ),
+    ),
                   Text(
                     'See details',
                     style: TextStyle(
