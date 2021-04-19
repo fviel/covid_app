@@ -30,14 +30,14 @@ class InfoScreen extends StatelessWidget {
                   children: <Widget>[
                     SymptomCard(
                       imagem: "assets/images/headache.png",
-                      titulo: "Dor de Cabeça",
+                      titulo: "Dor Cabeça",
                       isActive: true,
                     ),
                     SymptomCard(
                         imagem: "assets/images/caugh.png",
                         titulo: "Tosse"),
                     SymptomCard(
-                        imagem: "assets/images/febre.png",
+                        imagem: "assets/images/fever.png",
                         titulo: "Febre"),
                   ],
                 ),
