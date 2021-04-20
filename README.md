@@ -1,16 +1,8 @@
-# covid_app
+# covid_app  
 
-A new Flutter application.
+App de exemplo apenas para estudar efeitos de interface gráfica.
+Nenum conteúdo deste app é relevante, é só um exemplo baseado no tutorial do vídeo abaixo:
+[Vídeo do tutorial](https://www.youtube.com/watch?v=zx6uMCoW2gQ)
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## É só um projeto de exemplo, nem perca seu tempo aqui...
