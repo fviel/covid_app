@@ -59,6 +59,7 @@ class ClipPathBannerTopoComImagem extends StatelessWidget {
                       child: Text(
                         "$textTop \n$textBottom", //"Se puder, \nfique em casa.",
                         style: kHeadingTextStyle.copyWith(
+                          fontSize: 18,
                           color: Colors.white,
                         ),
                       ),

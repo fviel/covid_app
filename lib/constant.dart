@@ -18,17 +18,17 @@ const kActiveShadowColor = Color(0x594056C6);
 
 //Estilos de texto
 const kHeadingTextStyle = TextStyle(
-  fontSize: 22,
+  fontSize: 20,
   fontWeight: FontWeight.w600,
 );
 
 const kSubTextStyle = TextStyle(
-  fontSize: 16,
+  fontSize: 14,
   color: kTextLightColor,
 );
 
 const kTitleTextStyle = TextStyle(
-  fontSize: 18,
+  fontSize: 16,
   fontWeight: FontWeight.bold,
   color: kTitleTextColor,
 );

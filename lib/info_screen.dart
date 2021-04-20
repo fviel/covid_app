@@ -20,9 +20,14 @@ class InfoScreen extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               children: <Widget>[
-                Text(
-                  "Sintomas",
-                  style: kTitleTextStyle,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Sintomas",
+                      style: kTitleTextStyle,
+                    ),
+                  ],
                 ),
                 SizedBox(height: 20),
                 Row(
@@ -30,7 +35,7 @@ class InfoScreen extends StatelessWidget {
                   children: <Widget>[
                     SymptomCard(
                       imagem: "assets/images/headache.png",
-                      titulo: "Dor Cabeça",
+                      titulo: "Dor de cabeça",
                       isActive: true,
                     ),
                     SymptomCard(
@@ -42,9 +47,14 @@ class InfoScreen extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 20),
-                Text(
-                  "Prevenção",
-                  style: kTitleTextStyle,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Prevenção",
+                      style: kTitleTextStyle,
+                    ),
+                  ],
                 ),
                 SizedBox(height: 20),
                 SizedBox(height: 156,
@@ -66,6 +76,22 @@ class InfoScreen extends StatelessWidget {
                       ),
                     ),
                     Image.asset("assets/images/wear_mask.png"),
+                    Positioned(
+                      left:130,
+                      child: Container(
+                        height: 136,
+                        child: Column(
+                          children: <Widget>[
+                            Text(
+                              "Use máscara",
+                              style: kTitleTextStyle.copyWith(
+                                fontSize: 14,
+                              ),
+                            ),
+                          ],
+                        ),
+                    ),
+                    ),
                   ],
                 ),
                 ),
@@ -120,7 +146,9 @@ class SymptomCard extends StatelessWidget {
           Text(
             titulo,
             style: TextStyle(
-              fontWeight: FontWeight.bold,
+              color: Colors.brown,
+              fontWeight: FontWeight.w600,
+              fontSize: 10,
             ),
           ),
         ],
