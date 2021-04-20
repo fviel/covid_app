@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:covid_app/info_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:covid_app/constant.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -41,7 +42,17 @@ class ClipPathBannerTopoComImagem extends StatelessWidget {
           children: <Widget>[
             Align(
               alignment: Alignment.topRight,
-              child: SvgPicture.asset("assets/icons/menu.svg"),
+              //envelopando num Gesture Detector pra abrir o menu
+              child: GestureDetector(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: (context){
+                        return InfoScreen();
+                      },
+                    ));
+                  },
+                  child: SvgPicture.asset("assets/icons/menu.svg")
+              ),
             ),
             SizedBox(height: 20),
             Expanded(
